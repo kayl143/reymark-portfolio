@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reymark Cariaga — BSIT Portfolio | Torres Capitol College</title>
+  <meta name="description" content="Digital portfolio of Reymark Cariaga, a 20-year-old BSIT student at Torres Capitol College from Mibantang, Quezon, Bukidnon.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="figma-window" id="app-window">
+    
+    <!-- TOP WINDOW BAR / CHROME -->
+    <header class="window-header">
+      <!-- 1. Window Tab Bar -->
+      <div class="window-tab-bar">
+        <div class="window-controls">
+          <span class="traffic-dot traffic-red" id="dot-red" title="Close / Minimize notification"></span>
+          <span class="traffic-dot traffic-yellow" id="dot-yellow" title="Toggle Theme (Dark / Light)"></span>
+          <span class="traffic-dot traffic-green" id="dot-green" title="Toggle Presentation Mode"></span>
+        </div>
+
+        <div class="tab-list">
+          <div class="tab-item active" data-tab="hero">
+            <span>🐱 Reymark_Cariaga.fig</span>
+            <span class="tab-close">✕</span>
+          </div>
+          <div class="tab-item" data-tab="about">
+            <span>👤 Profile_Bio.card</span>
+          </div>
+          <div class="tab-item" data-tab="projects">
+            <span>📁 Featured_Projects (3)</span>
+          </div>
+          <div class="tab-item" data-tab="skills">
+            <span>⚡ Skills_Stack.comp</span>
+          </div>
+          <div class="tab-item" data-tab="education">
+            <span>🎓 Torres_Capitol.edu</span>
+          </div>
+          <div class="tab-item" data-tab="contact">
+            <span>💬 Let's_Connect.fig</span>
+          </div>
+        </div>
+
+        <div class="window-right-status">
+          <div class="location-badge">
+            <i data-lucide="map-pin" style="width: 12px; height: 12px;"></i>
+            <span>Mibantang, Quezon, Bukidnon</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span class="status-pulse"></span>
+            <span>BSIT • 20 Y/O</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Main Figma Toolbar -->
+      <div class="main-toolbar">
+        <div class="toolbar-left">
+          <div class="figma-logo-btn" title="Figma Style Portfolio Engine">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a5 5 0 0 1 5 5v5a5 5 0 0 1-5 5 5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm-5 5a5 5 0 0 0 0 10h5V7H7zm0 10a5 5 0 0 0 5 5 5 5 0 0 0 5-5v-5h-5a5 5 0 0 0-5 5z"/>
+            </svg>
+          </div>
+
+          <div class="tool-group">
+            <button class="tool-btn active" data-tool="select" title="Move / Select (V)">
+              <i data-lucide="mouse-pointer" style="width: 15px; height: 15px;"></i>
+              <span class="tooltip">Select (V)</span>
+            </button>
+            <button class="tool-btn" data-tool="frame" title="Frame (F)">
+              <i data-lucide="grid" style="width: 15px; height: 15px;"></i>
+              <span class="tooltip">Frame (F)</span>
+            </button>
+            <button class="tool-btn" data-tool="rectangle" title="Shape (R)">
+              <i data-lucide="square" style="width: 15px; height: 15px;"></i>
+              <span class="tooltip">Rectangle (R)</span>
+            </button>
+            <button class="tool-btn" data-tool="pen" title="Pen (P)">
+              <i data-lucide="pen-tool" style="width: 15px; height: 15px;"></i>
+              <span class="tooltip">Pen (P)</span>
+            </button>
+            <button class="tool-btn" data-tool="text" title="Text (T)">
+              <i data-lucide="type" style="width: 15px; height: 15px;"></i>
+              <span class="tooltip">Text (T)</span>
+            </button>
+            <button class="tool-btn" data-tool="comment" title="Add Note / Comment (C)">
+              <i data-lucide="message-square" style="width: 15px; height: 15px;"></i>
+              <span class="tooltip">Add Comment (C)</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="toolbar-center">
+          <div class="doc-name">
+            <span>Reymark Cariaga — Portfolio</span>
+            <span class="doc-badge">BSIT Student</span>
+          </div>
+        </div>
+
+        <div class="toolbar-right">
+          <div class="zoom-dropdown" id="zoom-toggle" title="Canvas Zoom">100% ▾</div>
+          
+          <div class="avatar-stack">
+            <div class="user-avatar-chip" title="Active Editor: Reymark Cariaga">
+              <img src="formal.png" alt="Reymark Cariaga" class="avatar-circle-img" />
+              <span class="avatar-name">Reymark</span>
+            </div>
+          </div>
+
+          <button class="btn-figma-secondary" id="btn-share" title="Share portfolio link">
+            <i data-lucide="share-2" style="width: 13px; height: 13px;"></i>
+            <span>Share</span>
+          </button>
+
+          <button class="btn-figma-primary" id="btn-present" title="Open Presentation Mode">
+            <i data-lucide="play" style="width: 12px; height: 12px; fill: white;"></i>
+            <span>Present</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- WORKSPACE (SIDEBARS & CANVAS) -->
+    <div class="workspace-wrapper">
+      
+      <!-- Toggle Sidebar Buttons -->
+      <button class="sidebar-toggle-btn toggle-left" id="toggle-left-btn" title="Toggle Layers Panel">
+        <i data-lucide="panel-left-close" style="width: 16px; height: 16px;"></i>
+      </button>
+      <button class="sidebar-toggle-btn toggle-right" id="toggle-right-btn" title="Toggle Inspector Panel">
+        <i data-lucide="panel-right-close" style="width: 16px; height: 16px;"></i>
+      </button>
+
+      <!-- LEFT SIDEBAR: LAYERS & FRAMES -->
+      <aside class="layers-sidebar" id="layers-panel">
+        <div class="panel-header">
+          <span>Layers & Pages</span>
+          <i data-lucide="layers" style="width: 13px; height: 13px;"></i>
+        </div>
+
+        <div class="layer-tree">
+          <div class="layer-item active" data-target="#hero-frame">
+            <div class="layer-info">
+              <i data-lucide="frame" style="width: 13px; height: 13px; color: var(--figma-blue);"></i>
+              <span># 00_Hero_Cover</span>
+            </div>
+            <div class="layer-actions">
+              <i data-lucide="eye" style="width: 12px; height: 12px;"></i>
+              <i data-lucide="lock" style="width: 12px; height: 12px;"></i>
+            </div>
+          </div>
+
+          <div class="layer-item" data-target="#about-frame">
+            <div class="layer-info">
+              <i data-lucide="user" style="width: 13px; height: 13px; color: var(--figma-purple);"></i>
+              <span># 01_About_Reymark</span>
+            </div>
+            <div class="layer-actions">
+              <i data-lucide="eye" style="width: 12px; height: 12px;"></i>
+            </div>
+          </div>
+
+          <div class="layer-item" data-target="#projects-frame">
+            <div class="layer-info">
+              <i data-lucide="folder-git-2" style="width: 13px; height: 13px; color: var(--figma-pink);"></i>
+              <span># 02_Projects_Spaces (3)</span>
+            </div>
+            <div class="layer-actions">
+              <i data-lucide="eye" style="width: 12px; height: 12px;"></i>
+            </div>
+          </div>
+
+          <div class="layer-item" data-target="#skills-frame">
+            <div class="layer-info">
+              <i data-lucide="code" style="width: 13px; height: 13px; color: var(--figma-green);"></i>
+              <span># 03_Tech_Stack</span>
+            </div>
+            <div class="layer-actions">
+              <i data-lucide="eye" style="width: 12px; height: 12px;"></i>
+            </div>
+          </div>
+
+          <div class="layer-item" data-target="#education-frame">
+            <div class="layer-info">
+              <i data-lucide="graduation-cap" style="width: 13px; height: 13px; color: var(--figma-yellow);"></i>
+              <span># 04_Torres_Capitol_Col</span>
+            </div>
+            <div class="layer-actions">
+              <i data-lucide="eye" style="width: 12px; height: 12px;"></i>
+            </div>
+          </div>
+
+          <div class="layer-item" data-target="#contact-frame">
+            <div class="layer-info">
+              <i data-lucide="mail" style="width: 13px; height: 13px; color: var(--figma-blue);"></i>
+              <span># 05_Contact_Canvas</span>
+            </div>
+            <div class="layer-actions">
+              <i data-lucide="eye" style="width: 12px; height: 12px;"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-footer-card">
+          <div class="title">📍 Quezon, Bukidnon</div>
+          <div class="desc">
+            Torres Capitol College BSIT Student. Specializing in Web Development, Database Management & Interactive UI.
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN INFINITE CANVAS -->
+      <main class="main-canvas" id="canvas-area">
+        
+        <!-- Canvas Floating Bottom Dock -->
+        <nav class="canvas-floating-dock">
+          <a href="#hero-frame" class="dock-nav-link active">Cover</a>
+          <a href="#about-frame" class="dock-nav-link">About</a>
+          <a href="#projects-frame" class="dock-nav-link">Projects</a>
+          <a href="#skills-frame" class="dock-nav-link">Skills</a>
+          <a href="#education-frame" class="dock-nav-link">College</a>
+          <a href="#contact-frame" class="dock-nav-link">Contact</a>
+          <div class="dock-divider"></div>
+          <button class="dock-btn" id="dock-theme-btn" title="Theme Mode">
+            <i data-lucide="sun-medium" style="width: 14px; height: 14px;"></i>
+          </button>
+        </nav>
+
+        <div class="canvas-content-container">
+
+          <!-- ==============================================
+               HERO CANVAS ARTBOARD (THANH T-VY STYLE)
+               ============================================== -->
+          <section class="hero-canvas-artboard" id="hero-frame" data-layer-name="00_Hero_Cover">
+            <div class="artboard-tag">
+              <i data-lucide="layout" style="width: 11px; height: 11px;"></i>
+              <span>Frame 00: # Reymark_Hero_Canvas (1280 x 720)</span>
+            </div>
+
+            <!-- Photo Badge in Hero Canvas -->
+            <div class="hero-photo-sticker" data-inspect-name="Frame: Reymark Formal Photo">
+              <span class="handle handle-tl"></span>
+              <span class="handle handle-tr"></span>
+              <span class="handle handle-bl"></span>
+              <span class="handle handle-br"></span>
+              <img src="formal.png" alt="Reymark Cariaga Formal Portrait" class="hero-polaroid-img" />
+              <div class="hero-photo-label">Reymark Cariaga 🎓</div>
+            </div>
+
+            <!-- Purple Category Bounding Box -->
+            <div class="bounding-box purple-bounding-box" data-inspect-name="Badge: BSIT / DEV">
+              <span class="handle handle-tl"></span>
+              <span class="handle handle-tr"></span>
+              <span class="handle handle-bl"></span>
+              <span class="handle handle-br"></span>
+              <span class="handle handle-tc"></span>
+              <span class="handle handle-bc"></span>
+              <span class="handle handle-ml"></span>
+              <span class="handle handle-mr"></span>
+              <h2>BSIT / WEB DEVELOPER</h2>
+            </div>
+
+            <!-- Main Cyan Bounding Box (Huge PORTFOLIO) -->
+            <div class="bounding-box cyan-bounding-box" data-inspect-name="Title: PORTFOLIO">
+              <span class="handle handle-tl"></span>
+              <span class="handle handle-tr"></span>
+              <span class="handle handle-bl"></span>
+              <span class="handle handle-br"></span>
+              <span class="handle handle-tc"></span>
+              <span class="handle handle-bc"></span>
+              <span class="handle handle-ml"></span>
+              <span class="handle handle-mr"></span>
+              <h1 class="hero-huge-title">PORTFOLIO</h1>
+            </div>
+
+            <!-- Live Multiplayer Floating Cursors & Badges -->
+            <!-- Blue Cursor: REYMARK CARIAGA 🐱 -->
+            <div class="figma-cursor-badge cursor-blue" data-inspect-name="Cursor: Reymark Cariaga">
+              <div class="cursor-arrow-blue"></div>
+              <span>REYMARK CARIAGA 🐱</span>
+            </div>
+
+            <!-- Green Cursor: 2026 BSIT ↗ -->
+            <div class="figma-cursor-badge cursor-green" data-inspect-name="Badge: 2026 Year">
+              <span>2026 • BSIT ↗</span>
+            </div>
+
+            <!-- Yellow Cursor: HI! ↗ -->
+            <div class="figma-cursor-badge cursor-yellow" data-inspect-name="Badge: Greeting">
+              <span>HI! WELCOME 👋</span>
+            </div>
+
+            <!-- Pink Mascot Box -->
+            <div class="pink-bounding-box" data-inspect-name="Mascot: Torres Capitol">
+              <span class="handle handle-tl"></span>
+              <span class="handle handle-tr"></span>
+              <span class="handle handle-bl"></span>
+              <span class="handle handle-br"></span>
+              <span>🐱✨ TCC BSIT</span>
+            </div>
+
+            <!-- Lead Text -->
+            <p class="hero-lead-text">
+              Hello! I'm <strong>Reymark Cariaga</strong>, a 20-year-old <strong>BSIT Student at Torres Capitol College</strong> residing in <strong>Mibantang, Quezon, Bukidnon</strong>. I build clean, functional web solutions, digital tools, and creative user interfaces.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-cta-group">
+              <a href="#projects-frame" class="btn-hero-primary">
+                <i data-lucide="layers" style="width: 16px; height: 16px;"></i>
+                <span>Explore Projects (3)</span>
+              </a>
+              <a href="#about-frame" class="btn-hero-outline">
+                <i data-lucide="user" style="width: 16px; height: 16px;"></i>
+                <span>About Reymark</span>
+              </a>
+              <a href="#contact-frame" class="btn-hero-outline">
+                <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+                <span>Get In Touch</span>
+              </a>
+            </div>
+          </section>
+
+
+          <!-- ==============================================
+               ABOUT ME / PROFILE FRAME
+               ============================================== -->
+          <section class="canvas-frame-section" id="about-frame" data-layer-name="01_About_Reymark">
+            <div class="artboard-tag">
+              <i data-lucide="layout" style="width: 11px; height: 11px;"></i>
+              <span>Frame 01: # About_Me_Bio</span>
+            </div>
+
+            <div class="section-figma-badge">
+              <i data-lucide="sparkles" style="width: 12px; height: 12px;"></i>
+              <span>PERSONAL PROFILE & BIOGRAPHY</span>
+            </div>
+            <h2 class="section-main-title">About Reymark Cariaga</h2>
+            <p class="section-subtitle">
+              Passionate about technology, web development, and crafting helpful systems for our local community in Bukidnon and beyond.
+            </p>
+
+            <div class="about-grid">
+              <!-- Left Column: Profile Card -->
+              <div class="profile-card" data-inspect-name="Component: ProfileCard">
+                <div class="profile-header-row">
+                  <div class="avatar-badge-wrapper">
+                    <img src="formal.png" alt="Reymark Cariaga Formal Portrait" class="profile-avatar-img" />
+                    <span class="online-dot" title="Available for projects"></span>
+                  </div>
+                  <div class="profile-name-block">
+                    <h3>Reymark Cariaga</h3>
+                    <div class="profile-tagline">BSIT Student • Torres Capitol College</div>
+                    <div style="font-size: 11px; color: var(--text-dim); margin-top: 3px;">
+                      📍 Mibantang, Quezon, Bukidnon, Philippines
+                    </div>
+                  </div>
+                </div>
+
+                <div class="info-table-list">
+                  <div class="info-row">
+                    <span class="info-label">
+                      <i data-lucide="calendar" style="width: 14px; height: 14px;"></i> Age
+                    </span>
+                    <span class="info-value">20 Years Old</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">
+                      <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i> Location
+                    </span>
+                    <span class="info-value">Mibantang, Quezon, Bukidnon</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">
+                      <i data-lucide="graduation-cap" style="width: 14px; height: 14px;"></i> College
+                    </span>
+                    <span class="info-value">Torres Capitol College</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">
+                      <i data-lucide="book-open" style="width: 14px; height: 14px;"></i> Degree Course
+                    </span>
+                    <span class="info-value">BS in Information Technology (BSIT)</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">
+                      <i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Status
+                    </span>
+                    <span class="info-value highlight-pill">Open for Projects & Internships</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Interactive Sticky Notes -->
+              <div class="sticky-notes-stack">
+                <div class="sticky-note note-yellow" data-inspect-name="Sticky: Tech Vision">
+                  <span class="sticky-pin"></span>
+                  <div class="sticky-note-title">📌 MISSION & FOCUS</div>
+                  <div class="sticky-note-text">
+                    "Bridging modern web technologies with real-life community needs. As a BSIT student, I focus on building scalable web apps, clean database structures, and intuitive interfaces."
+                  </div>
+                  <div class="sticky-author">— Reymark Cariaga (20 y/o)</div>
+                </div>
+
+                <div class="sticky-note note-blue" data-inspect-name="Sticky: Education">
+                  <span class="sticky-pin"></span>
+                  <div class="sticky-note-title">🎓 TORRES CAPITOL COLLEGE</div>
+                  <div class="sticky-note-text">
+                    Currently pursuing my Bachelor of Science in Information Technology (BSIT). Engaging in practical coursework spanning software development, network fundamentals, and web design.
+                  </div>
+                  <div class="sticky-author">— TCC Bukidnon</div>
+                </div>
+
+                <div class="sticky-note note-pink" data-inspect-name="Sticky: Location">
+                  <span class="sticky-pin"></span>
+                  <div class="sticky-note-title">📍 ROOTED IN BUKIDNON</div>
+                  <div class="sticky-note-text">
+                    Proudly representing Mibantang, Quezon, Bukidnon. Excited to contribute tech solutions for agriculture, local governance, and digital literacy.
+                  </div>
+                  <div class="sticky-author">— Mibantang, Quezon</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- ==============================================
+               PROJECTS SECTION (THREE SPACES WITH EXAMPLES)
+               ============================================== -->
+          <section class="canvas-frame-section" id="projects-frame" data-layer-name="02_Projects_Spaces">
+            <div class="artboard-tag">
+              <i data-lucide="layout" style="width: 11px; height: 11px;"></i>
+              <span>Frame 02: # Featured_Projects_Grid (3 Spaces)</span>
+            </div>
+
+            <div class="section-figma-badge">
+              <i data-lucide="folder-check" style="width: 12px; height: 12px;"></i>
+              <span>THREE PROJECT SHOWCASES</span>
+            </div>
+            <h2 class="section-main-title">Projects & System Prototypes</h2>
+            <p class="section-subtitle">
+              Here are three dedicated project spaces showcasing web development and IT solutions designed for academic, agricultural, and community use.
+            </p>
+
+            <div class="projects-grid">
+              
+              <!-- PROJECT SPACE 1: TORRES CAPITOL COLLEGE STUDENT PORTAL -->
+              <div class="project-card" data-project-id="1" data-inspect-name="Card: TCC Portal">
+                <div class="project-thumbnail-wrapper">
+                  <div class="mockup-canvas-bg" style="background: linear-gradient(135deg, #1e1b4b, #312e81);">
+                    <span class="project-badge-top">PROJECT 01</span>
+                    <span class="project-badge-status status-completed">Completed</span>
+                    
+                    <div class="mockup-preview-box">
+                      <div class="mockup-icon">🎓</div>
+                      <span style="font-size: 11px; font-weight: 600; color: #c7d2fe;">TCC Student Portal</span>
+                      <span style="font-size: 9px; font-family: var(--font-mono); color: #818cf8;">enrollment • grades • schedules</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-body">
+                  <div class="project-category">Academic Web System</div>
+                  <h3 class="project-title">CampusLink — Torres Capitol College Portal</h3>
+                  <p class="project-desc">
+                    A responsive web portal engineered for students and faculty of Torres Capitol College to monitor quarterly grades, view curriculum checklists, and receive campus announcements in real-time.
+                  </p>
+
+                  <div class="tech-tag-row">
+                    <span class="tech-pill">PHP</span>
+                    <span class="tech-pill">MySQL</span>
+                    <span class="tech-pill">JavaScript</span>
+                    <span class="tech-pill">Tailwind CSS</span>
+                  </div>
+
+                  <div class="project-action-row">
+                    <button class="btn-view-project" onclick="openProjectModal(1)">
+                      <span>Inspect Details</span>
+                      <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                    </button>
+                    <a href="#projects-frame" class="btn-code-link" onclick="openProjectModal(1)">
+                      <i data-lucide="external-link" style="width: 13px; height: 13px;"></i>
+                      <span>Demo</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PROJECT SPACE 2: BUKIDNON AGROMARKET (QUEZON) -->
+              <div class="project-card" data-project-id="2" data-inspect-name="Card: AgroLink">
+                <div class="project-thumbnail-wrapper">
+                  <div class="mockup-canvas-bg" style="background: linear-gradient(135deg, #064e3b, #047857);">
+                    <span class="project-badge-top">PROJECT 02</span>
+                    <span class="project-badge-status status-completed">Active Prototype</span>
+                    
+                    <div class="mockup-preview-box">
+                      <div class="mockup-icon">🌾</div>
+                      <span style="font-size: 11px; font-weight: 600; color: #a7f3d0;">Bukidnon AgroLink</span>
+                      <span style="font-size: 9px; font-family: var(--font-mono); color: #34d399;">farmers marketplace • logistics</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-body">
+                  <div class="project-category">Agricultural E-Commerce</div>
+                  <h3 class="project-title">Bukidnon AgroLink — Quezon Farmers Market</h3>
+                  <p class="project-desc">
+                    A digital direct-to-buyer web platform connecting farmers in Quezon, Bukidnon with regional buyers and food distributors, eliminating unfair middlemen and displaying daily wholesale commodity prices.
+                  </p>
+
+                  <div class="tech-tag-row">
+                    <span class="tech-pill">React</span>
+                    <span class="tech-pill">Node.js</span>
+                    <span class="tech-pill">Express</span>
+                    <span class="tech-pill">MongoDB</span>
+                  </div>
+
+                  <div class="project-action-row">
+                    <button class="btn-view-project" onclick="openProjectModal(2)">
+                      <span>Inspect Details</span>
+                      <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                    </button>
+                    <a href="#projects-frame" class="btn-code-link" onclick="openProjectModal(2)">
+                      <i data-lucide="external-link" style="width: 13px; height: 13px;"></i>
+                      <span>Demo</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PROJECT SPACE 3: QUEZTRACK (BARANGAY MIBANTANG) -->
+              <div class="project-card" data-project-id="3" data-inspect-name="Card: QuezTrack">
+                <div class="project-thumbnail-wrapper">
+                  <div class="mockup-canvas-bg" style="background: linear-gradient(135deg, #7c2d12, #c2410c);">
+                    <span class="project-badge-top">PROJECT 03</span>
+                    <span class="project-badge-status status-ongoing">In Development</span>
+                    
+                    <div class="mockup-preview-box">
+                      <div class="mockup-icon">🚨</div>
+                      <span style="font-size: 11px; font-weight: 600; color: #fed7aa;">QuezTrack Incident Hub</span>
+                      <span style="font-size: 9px; font-family: var(--font-mono); color: #fb923c;">brgy mibantang • emergency alerts</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-body">
+                  <div class="project-category">Community Safety & GovTech</div>
+                  <h3 class="project-title">QuezTrack — Barangay Mibantang Advisory Hub</h3>
+                  <p class="project-desc">
+                    A public reporting and emergency broadcast application built for residents of Barangay Mibantang, Quezon to submit incident reports, request digital barangay clearance, and get disaster alerts.
+                  </p>
+
+                  <div class="tech-tag-row">
+                    <span class="tech-pill">JavaScript</span>
+                    <span class="tech-pill">Firebase</span>
+                    <span class="tech-pill">Leaflet Maps</span>
+                    <span class="tech-pill">Bootstrap 5</span>
+                  </div>
+
+                  <div class="project-action-row">
+                    <button class="btn-view-project" onclick="openProjectModal(3)">
+                      <span>Inspect Details</span>
+                      <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                    </button>
+                    <a href="#projects-frame" class="btn-code-link" onclick="openProjectModal(3)">
+                      <i data-lucide="external-link" style="width: 13px; height: 13px;"></i>
+                      <span>Demo</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Custom Slot Placeholder (For Reymark to easily add future projects) -->
+            <div style="margin-top: 24px; padding: 20px; border: 2px dashed var(--border-color); border-radius: 12px; text-align: center; background: rgba(255,255,255,0.02);" data-inspect-name="Slot: Future Projects">
+              <span style="font-size: 12px; font-family: var(--font-mono); color: var(--text-dim);">
+                ✨ READY FOR EXPANSION: Reymark can easily duplicate or add more project cards into this grid.
+              </span>
+            </div>
+          </section>
+
+
+          <!-- ==============================================
+               SKILLS & TECH STACK SECTION
+               ============================================== -->
+          <section class="canvas-frame-section" id="skills-frame" data-layer-name="03_Tech_Stack">
+            <div class="artboard-tag">
+              <i data-lucide="layout" style="width: 11px; height: 11px;"></i>
+              <span>Frame 03: # Skills_&_Tools_Matrix</span>
+            </div>
+
+            <div class="section-figma-badge">
+              <i data-lucide="cpu" style="width: 12px; height: 12px;"></i>
+              <span>TECHNICAL CAPABILITIES</span>
+            </div>
+            <h2 class="section-main-title">Skills & Technologies</h2>
+            <p class="section-subtitle">
+              Core technologies, programming languages, and design tools I actively study and utilize as a BSIT student.
+            </p>
+
+            <div class="skills-container">
+              <!-- Frontend Web Development -->
+              <div class="skill-category-card" data-inspect-name="SkillGroup: Frontend">
+                <div class="skill-category-title">
+                  <span>💻</span>
+                  <h4>Web & Frontend</h4>
+                </div>
+                <div class="skill-items-list">
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">HTML5 / Semantic Web</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-blue" style="width: 90%;"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">CSS3 & Responsive Design</span>
+                      <span>85%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-blue" style="width: 85%;"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">JavaScript (ES6+)</span>
+                      <span>80%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-blue" style="width: 80%;"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">Tailwind CSS & Bootstrap</span>
+                      <span>85%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-blue" style="width: 85%;"></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Backend & Databases -->
+              <div class="skill-category-card" data-inspect-name="SkillGroup: Backend">
+                <div class="skill-category-title">
+                  <span>⚙️</span>
+                  <h4>Backend & Database</h4>
+                </div>
+                <div class="skill-items-list">
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">PHP (Object-Oriented)</span>
+                      <span>80%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 80%;"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">MySQL & Relational Design</span>
+                      <span>85%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 85%;"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">Python Basics</span>
+                      <span>75%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 75%;"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">REST APIs & JSON</span>
+                      <span>75%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" style="width: 75%;"></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tools & Creative Software -->
+              <div class="skill-category-card" data-inspect-name="SkillGroup: Tools">
+                <div class="skill-category-title">
+                  <span>🎨</span>
+                  <h4>UI/UX & IT Tools</h4>
+                </div>
+                <div class="skill-items-list">
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">Figma (UI Wireframing)</span>
+                      <span>85%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-green" style="width: 85%;"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">Git & GitHub</span>
+                      <span>78%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-green" style="width: 78%;"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">VS Code / Dev Tools</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-green" style="width: 90%;"></div></div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-meta">
+                      <span class="skill-name">Networking / Hardware Setup</span>
+                      <span>80%</span>
+                    </div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill fill-green" style="width: 80%;"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- ==============================================
+               EDUCATION: TORRES CAPITOL COLLEGE
+               ============================================== -->
+          <section class="canvas-frame-section" id="education-frame" data-layer-name="04_Torres_Capitol_Col">
+            <div class="artboard-tag">
+              <i data-lucide="layout" style="width: 11px; height: 11px;"></i>
+              <span>Frame 04: # Academic_Foundation</span>
+            </div>
+
+            <div class="section-figma-badge">
+              <i data-lucide="award" style="width: 12px; height: 12px;"></i>
+              <span>ACADEMIC BACKGROUND</span>
+            </div>
+            <h2 class="section-main-title">Education & College</h2>
+            <p class="section-subtitle">
+              Formal collegiate background and studies in Information Technology.
+            </p>
+
+            <div class="education-card" data-inspect-name="Card: Torres Capitol College">
+              <div class="college-icon-box">
+                🏛️
+              </div>
+              <div class="education-details">
+                <h3>Bachelor of Science in Information Technology (BSIT)</h3>
+                <div class="school-name">Torres Capitol College — Bukidnon</div>
+                <p>
+                  Acquiring strong fundamentals across Computer Programming, Database Management Systems, System Analysis and Design, Computer Networks, Web Technologies, and Software Engineering. Continuously maintaining high academic performance while actively developing real-world projects.
+                </p>
+                <div style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px;">
+                  <span class="tech-pill">BSIT Department</span>
+                  <span class="tech-pill">Quezon, Bukidnon Area</span>
+                  <span class="tech-pill">Student Portfolio Edition</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- ==============================================
+               CONTACT & GET IN TOUCH
+               ============================================== -->
+          <section class="canvas-frame-section" id="contact-frame" data-layer-name="05_Contact_Canvas">
+            <div class="artboard-tag">
+              <i data-lucide="layout" style="width: 11px; height: 11px;"></i>
+              <span>Frame 05: # Collaboration_&_Contact</span>
+            </div>
+
+            <div class="section-figma-badge">
+              <i data-lucide="message-circle" style="width: 12px; height: 12px;"></i>
+              <span>GET IN TOUCH</span>
+            </div>
+            <h2 class="section-main-title">Let's Connect & Collaborate</h2>
+            <p class="section-subtitle">
+              Interested in working together or discussing an internship or project? Drop me a message or connect through my socials!
+            </p>
+
+            <div class="contact-wrapper">
+              <!-- Left Column: Direct Links -->
+              <div class="contact-info-panel">
+                <a href="mailto:reymark.cariaga@example.com" class="contact-link-card" id="contact-email-link" data-inspect-name="Link: Email">
+                  <div class="contact-link-icon">
+                    <i data-lucide="mail"></i>
+                  </div>
+                  <div class="contact-link-texts">
+                    <div class="label">Direct Email</div>
+                    <div class="val">reymark.cariaga@gmail.com</div>
+                  </div>
+                </a>
+
+                <div class="contact-link-card" data-inspect-name="Info: Location">
+                  <div class="contact-link-icon">
+                    <i data-lucide="map-pin"></i>
+                  </div>
+                  <div class="contact-link-texts">
+                    <div class="label">Home Address</div>
+                    <div class="val">Mibantang, Quezon, Bukidnon, PH</div>
+                  </div>
+                </div>
+
+                <div class="contact-link-card" data-inspect-name="Info: School">
+                  <div class="contact-link-icon">
+                    <i data-lucide="school"></i>
+                  </div>
+                  <div class="contact-link-texts">
+                    <div class="label">Institution</div>
+                    <div class="val">Torres Capitol College</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; margin-top: 6px;">
+                  <a href="https://github.com" target="_blank" class="contact-link-card" style="flex: 1; justify-content: center;" title="GitHub Profile">
+                    <i data-lucide="github"></i>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" class="contact-link-card" style="flex: 1; justify-content: center;" title="LinkedIn Profile">
+                    <i data-lucide="linkedin"></i>
+                  </a>
+                  <a href="https://facebook.com" target="_blank" class="contact-link-card" style="flex: 1; justify-content: center;" title="Facebook Profile">
+                    <i data-lucide="facebook"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Column: Figma Comment / Message Card -->
+              <div class="comment-card-box" data-inspect-name="Form: Send Message">
+                <span class="comment-bubble-tag">💬 Drop a Comment / Inquiry</span>
+                <form id="portfolio-contact-form" onsubmit="handleContactSubmit(event)">
+                  <div class="form-group">
+                    <label class="form-label">Your Name</label>
+                    <input type="text" class="form-input" id="sender-name" placeholder="e.g. John Doe" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Your Email</label>
+                    <input type="email" class="form-input" id="sender-email" placeholder="john@example.com" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Message / Project Inquiry</label>
+                    <textarea class="form-textarea" id="sender-msg" placeholder="Hello Reymark, I checked out your portfolio and would like to talk about..." required></textarea>
+                  </div>
+
+                  <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center;">
+                    <i data-lucide="send" style="width: 15px; height: 15px;"></i>
+                    <span>Send Message to Reymark</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <!-- Footer Note -->
+          <footer style="text-align: center; padding: 24px 0; color: var(--text-dim); font-size: 12px; font-family: var(--font-mono);">
+            © 2026 Reymark Cariaga • BSIT Student, Torres Capitol College • Mibantang, Quezon, Bukidnon
+          </footer>
+
+        </div>
+      </main>
+
+      <!-- RIGHT SIDEBAR: FIGMA PROPERTY INSPECTOR -->
+      <aside class="inspector-sidebar" id="inspector-panel">
+        <div class="panel-header">
+          <span>Design Inspector</span>
+          <i data-lucide="sliders" style="width: 13px; height: 13px;"></i>
+        </div>
+
+        <div class="inspector-content">
+          <!-- Selection Info -->
+          <div class="inspector-group">
+            <div class="inspector-label">
+              <span>Selected Element</span>
+              <span id="inspect-type" style="color: var(--figma-blue); text-transform: none;">Active</span>
+            </div>
+            <div style="font-size: 13px; font-weight: 700; color: #fff;" id="inspect-title">
+              Hero Cover Canvas
+            </div>
+          </div>
+
+          <!-- Position & Dimension Layout (X, Y, W, H) -->
+          <div class="inspector-group">
+            <div class="inspector-label">Layout Coordinates</div>
+            <div class="inspector-grid">
+              <div class="inspector-field"><span>X</span> <span id="prop-x">0 px</span></div>
+              <div class="inspector-field"><span>Y</span> <span id="prop-y">0 px</span></div>
+              <div class="inspector-field"><span>W</span> <span id="prop-w">100%</span></div>
+              <div class="inspector-field"><span>H</span> <span id="prop-h">Auto</span></div>
+            </div>
+          </div>
+
+          <!-- Reymark's Bio Snapshot -->
+          <div class="inspector-group">
+            <div class="inspector-label">Student Meta</div>
+            <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 10px;">
+              <img src="formal.png" alt="Reymark Cariaga" style="width: 44px; height: 50px; border-radius: 6px; object-fit: cover; object-position: top center; border: 1px solid var(--border-light);" />
+              <div style="font-size: 11px; line-height: 1.4;">
+                <div style="font-weight: 700; color: #fff;">Reymark Cariaga</div>
+                <div style="color: var(--figma-blue);">BSIT • 20 y/o</div>
+                <div style="color: var(--text-dim); font-size: 10px;">Torres Capitol College</div>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11px;">
+              <div><strong style="color: var(--text-dim);">Location:</strong> Mibantang, Quezon</div>
+              <div><strong style="color: var(--text-dim);">Degree:</strong> BS Info Technology</div>
+              <div><strong style="color: var(--text-dim);">Focus:</strong> Web & Database Dev</div>
+            </div>
+          </div>
+
+          <!-- Color Tokens -->
+          <div class="inspector-group">
+            <div class="inspector-label">Color Swatches</div>
+            <div class="color-swatch-row">
+              <div class="color-swatch" style="background: var(--figma-blue);" title="Figma Blue #0d99ff"></div>
+              <div class="color-swatch" style="background: var(--figma-purple);" title="Purple #9747ff"></div>
+              <div class="color-swatch" style="background: var(--figma-pink);" title="Pink #ff4785"></div>
+              <div class="color-swatch" style="background: var(--figma-green);" title="Green #14ae5c"></div>
+              <div class="color-swatch" style="background: var(--figma-yellow);" title="Yellow #ffc700"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- PROJECT DETAIL MODAL DIALOG -->
+  <div class="modal-overlay" id="project-modal" onclick="handleModalOutsideClick(event)">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h4 id="modal-project-title">Project Case Study</h4>
+        <button class="modal-close-btn" onclick="closeProjectModal()">✕</button>
+      </div>
+      <div class="modal-body" id="modal-project-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notice" id="toast-msg">
+    Notification text
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
