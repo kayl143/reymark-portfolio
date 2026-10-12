@@ -15,6 +15,25 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   
   <link rel="stylesheet" href="style.css">
+
+  <!-- Certificates section styles -->
+  <style>
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;}
+    .cert-card{background:var(--bg-card);border-radius:12px;border:1px solid var(--border-color);overflow:hidden;display:flex;flex-direction:column;transition:all .25s cubic-bezier(.16,1,.3,1);}
+    .cert-card:hover{transform:translateY(-6px);border-color:var(--figma-blue);box-shadow:0 16px 36px rgba(13,153,255,.15);}
+    .cert-thumb{position:relative;display:block;width:100%;padding:0;border:none;border-bottom:1px solid var(--border-color);background:#fff;cursor:zoom-in;overflow:hidden;}
+    .cert-thumb img{display:block;width:100%;height:auto;transition:transform .4s ease;}
+    .cert-thumb:hover img{transform:scale(1.03);}
+    .cert-zoom{position:absolute;right:10px;bottom:10px;font-family:var(--font-mono);font-size:10px;font-weight:700;color:#fff;background:rgba(0,0,0,.75);padding:4px 9px;border-radius:4px;border:1px solid rgba(255,255,255,.2);}
+    .cert-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;}
+    .cert-body .project-desc{margin-bottom:14px;}
+    .cert-body .tech-tag-row{margin-bottom:0;}
+    .cert-lightbox{position:fixed;inset:0;z-index:2500;display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);cursor:zoom-out;}
+    .cert-lightbox.open{display:flex;}
+    .cert-lightbox img{max-width:min(1100px,100%);max-height:80vh;border-radius:8px;box-shadow:0 24px 60px rgba(0,0,0,.6);}
+    .cert-lb-cap{font-family:var(--font-mono);font-size:12px;color:var(--text-muted);text-align:center;}
+    .cert-lb-close{position:absolute;top:18px;right:22px;font-family:var(--font-mono);font-size:12px;color:#fff;background:rgba(255,255,255,.1);border:1px solid var(--border-light);border-radius:6px;padding:8px 14px;cursor:pointer;}
+  </style>
 </head>
 <body>
 
@@ -37,6 +56,9 @@
           </div>
           <div class="tab-item" data-tab="about">
             <span>👤 Profile_Bio.card</span>
+          </div>
+          <div class="tab-item" data-tab="certificates">
+            <span>🏅 Certificates (2)</span>
           </div>
           <div class="tab-item" data-tab="projects">
             <span>📁 Featured_Projects (3)</span>
@@ -171,6 +193,16 @@
             </div>
           </div>
 
+          <div class="layer-item" data-target="#certificates-frame">
+            <div class="layer-info">
+              <i data-lucide="award" style="width: 13px; height: 13px; color: var(--figma-orange);"></i>
+              <span># 01b_Certificates (2)</span>
+            </div>
+            <div class="layer-actions">
+              <i data-lucide="eye" style="width: 12px; height: 12px;"></i>
+            </div>
+          </div>
+
           <div class="layer-item" data-target="#projects-frame">
             <div class="layer-info">
               <i data-lucide="folder-git-2" style="width: 13px; height: 13px; color: var(--figma-pink);"></i>
@@ -227,6 +259,7 @@
         <nav class="canvas-floating-dock">
           <a href="#hero-frame" class="dock-nav-link active">Cover</a>
           <a href="#about-frame" class="dock-nav-link">About</a>
+          <a href="#certificates-frame" class="dock-nav-link">Certificates</a>
           <a href="#projects-frame" class="dock-nav-link">Projects</a>
           <a href="#skills-frame" class="dock-nav-link">Skills</a>
           <a href="#education-frame" class="dock-nav-link">College</a>
@@ -435,6 +468,62 @@
                   <div class="sticky-author">— Mibantang, Quezon</div>
                 </div>
               </div>
+            </div>
+          </section>
+
+
+          <!-- ==============================================
+               CERTIFICATES SECTION (NEW)
+               ============================================== -->
+          <section class="canvas-frame-section" id="certificates-frame" data-layer-name="01b_Certificates">
+            <div class="artboard-tag">
+              <i data-lucide="layout" style="width: 11px; height: 11px;"></i>
+              <span>Frame 01b: # Certificates_Gallery</span>
+            </div>
+
+            <div class="section-figma-badge">
+              <i data-lucide="award" style="width: 12px; height: 12px;"></i>
+              <span>CERTIFICATES & TRAININGS</span>
+            </div>
+            <h2 class="section-main-title">Certificates</h2>
+            <p class="section-subtitle">
+              Workshops and online courses I joined to keep growing as a BSIT student. Click a certificate to view it in full.
+            </p>
+
+            <div class="cert-grid">
+
+              <div class="cert-card" data-inspect-name="Card: DEVCON Certificate">
+                <button class="cert-thumb" type="button" data-full="cert-devcon-bits-of-light.png" data-cap="Certificate of Participation — DEVCON Bits of Light Roadshow">
+                  <img src="cert-devcon-bits-of-light.png" alt="Certificate of Participation: DEVCON Bits of Light Roadshow" loading="lazy">
+                  <span class="cert-zoom">View ⤢</span>
+                </button>
+                <div class="cert-body">
+                  <div class="project-category">Workshop • 30 Jul 2026</div>
+                  <h3 class="project-title">DEVCON Bits of Light Roadshow</h3>
+                  <p class="project-desc">Certificate of Participation from the DEVCON Bukidnon Chapter for joining a day of learning, care, and smiles held at Torres Capitol College.</p>
+                  <div class="tech-tag-row">
+                    <span class="tech-pill">DEVCON Bukidnon</span>
+                    <span class="tech-pill">Torres Capitol College</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-card" data-inspect-name="Card: Cisco Certificate">
+                <button class="cert-thumb" type="button" data-full="cert-cisco-packet-tracer.png" data-cap="Getting Started with Cisco Packet Tracer — Cisco Networking Academy">
+                  <img src="cert-cisco-packet-tracer.png" alt="Certificate: Getting Started with Cisco Packet Tracer" loading="lazy">
+                  <span class="cert-zoom">View ⤢</span>
+                </button>
+                <div class="cert-body">
+                  <div class="project-category">Online Course • 09 Oct 2026</div>
+                  <h3 class="project-title">Getting Started with Cisco Packet Tracer</h3>
+                  <p class="project-desc">Completed an introductory Cisco Networking Academy course on building and simulating networks, which supports my networking and hardware setup skills.</p>
+                  <div class="tech-tag-row">
+                    <span class="tech-pill">Cisco Networking Academy</span>
+                    <span class="tech-pill">Networking</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </section>
 
@@ -948,12 +1037,39 @@
     </div>
   </div>
 
+  <!-- CERTIFICATE VIEWER -->
+  <div class="cert-lightbox" id="cert-lightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+    <button class="cert-lb-close" type="button">Close ✕</button>
+    <img id="cert-lb-img" src="" alt="">
+    <div class="cert-lb-cap" id="cert-lb-cap"></div>
+  </div>
+
   <!-- TOAST NOTIFICATION -->
   <div class="toast-notice" id="toast-msg">
     Notification text
   </div>
 
   <script src="script.js"></script>
+
+  <!-- Certificate viewer script -->
+  <script>
+    (function () {
+      const lb = document.getElementById('cert-lightbox');
+      const img = document.getElementById('cert-lb-img');
+      const cap = document.getElementById('cert-lb-cap');
+      const close = () => lb.classList.remove('open');
+      document.querySelectorAll('.cert-thumb').forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.stopPropagation();
+          img.src = btn.dataset.full;
+          img.alt = btn.dataset.cap;
+          cap.textContent = btn.dataset.cap;
+          lb.classList.add('open');
+        });
+      });
+      lb.addEventListener('click', close);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    })();
+  </script>
 </body>
 </html>
-
